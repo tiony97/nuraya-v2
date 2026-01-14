@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/css/locomotive-scroll.min.css" />
+    <link rel="stylesheet" href="./assets/css/tailwind.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/home_vector.png"
+      type="image/x-icon"
+    />
+    <title>Nuraya</title>
+  </head>
+  <body>
+    <!-- particles.js container -->
+    <div id="particles-js"></div>
+
+    <!--Custom Cursor pointer-->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <!--Staggered Bars Before Menu and Page Reveal-->
+    <div
+      class="stagger-bars fixed top-0 left-0 w-full h-screen grid grid-cols-7"
+    >
+      <div class="bar w-full h-full"></div>
+      <div class="bar w-full h-full"></div>
+      <div class="bar w-full h-full"></div>
+      <div class="bar w-full h-full"></div>
+      <div class="bar w-full h-full"></div>
+      <div class="bar w-full h-full"></div>
+      <div class="bar w-full h-full"></div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 20L12 4M12 4L5 11M12 4L19 11"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+
+    <!--Header-->
+    <header id="site-header">
+      <div class="container">
+        <!--Logo-->
+        <a href="/" class="logo">
+          <img src="./assets/images/nuraya_logo.png" alt="nuraya_logo"
+        /></a>
+
+        <!--Menu Navigation-->
+        <div class="menu-links">
+          <nav>
+            <ul>
+              <li class="menu-link active"><a href="#">home</a></li>
+              <li class="menu-link"><a href="#">service</a></li>
+              <li class="menu-link"><a href="#">approach</a></li>
+              <li class="menu-link"><a href="#">the founders</a></li>
+              <li class="menu-link"><a href="#">portfolio</a></li>
+              <li class="menu-link"><a href="#">testimonial</a></li>
+              <li class="menu-link"><a href="#">knowledge hub</a></li>
+              <li class="menu-link"><a href="#">get in touch</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!--Mobile Menu Button-->
+        <div id="mobile-menu-btn">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay" class="mobile-menu-overlay">
+      <div class="mobile-menu-container">
+        <!-- Close Button -->
+        <button id="mobile-menu-close" class="mobile-menu-close">
+          <svg
+            width="30"
+            height="30"
+            viewBox="0 0 30 30"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22.5 7.5L7.5 22.5"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M7.5 7.5L22.5 22.5"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+
+        <!-- Menu Links -->
+        <nav class="mobile-menu-nav">
+          <ul>
+            <li class="mobile-menu-link active"><a href="#">home</a></li>
+            <li class="mobile-menu-link"><a href="#">service</a></li>
+            <li class="mobile-menu-link"><a href="#">approach</a></li>
+            <li class="mobile-menu-link"><a href="#">the founders</a></li>
+            <li class="mobile-menu-link"><a href="#">portfolio</a></li>
+            <li class="mobile-menu-link"><a href="#">testimonial</a></li>
+            <li class="mobile-menu-link"><a href="#">knowledge hub</a></li>
+            <li class="mobile-menu-link"><a href="#">get in touch</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <main class="page-content">
+      <!--Banner-->
+      <section id="home-wrapper">
+        <!--Home wrapper main image-->
+        <img src="./assets/images/home_vector.png" class="wrapper-image" />
+
+        <!--Wrapper Content-->
+        <div class="container">
+          <!--Title Section-->
+          <div class="title-section">
+            <div class="title">
+              <h2
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-delay="200"
+              >
+                Partnering
+              </h2>
+              <h2
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-delay="200"
+              >
+                For Sustainable
+              </h2>
+              <h2
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-delay="200"
+              >
+                Profitable Growth
+              </h2>
+            </div>
+
+            <a
+              href="#"
+              class="site-btn"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="200"
+            >
+              <p>get in touch</p>
+            </a>
+          </div>
+
+          <!--Content Section-->
+          <div class="content-section">
+            <p
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="200"
+              class="content"
+            >
+              Nuraya is a management consulting firm that partners with
+              businesses across industries to deliver sustainable, profitable
+              growth.
+            </p>
+            <p
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="200"
+              class="content"
+            >
+              Nuraya Means Light: We shed light on your biggest opportunities by
+              understanding your end-user needs and Jobs-to-Be-Done (JBTD).With
+              this clarity, we design high impact strategies and partner with
+              your teams to execute with excellence and deliver lasting results.
+            </p>
+            <a
+              href="#"
+              class="site-btn"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="200"
+            >
+              <p>get in touch</p>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--JS-->
+    <!-- particles.js lib -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <script src="./assets/js/all.min.js"></script>
+    <script src="./assets/js/barba.js"></script>
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/js/gsap.min.js"></script>
+    <script src="./assets/js/ScrollToPlugin.min.js"></script>
+    <script src="./assets/js/ScrollTrigger.min.js"></script>
+    <script src="./assets/js/split-type.min.js"></script>
+    <script src="./assets/js/lenis.min.js"></script>
+    <script src="./assets/js/locomotive-scroll.min.js"></script>
+    <script src="./assets/js/split-type.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./assets/js/main.js"></script>
+
+    <script>
+      AOS.init({
+        duration: 1000,
+        easing: "ease-in-out",
+        once: false,
+        mirror: false,
+        offset: 100,
+      });
+    </script>
+  </body>
+</html>
