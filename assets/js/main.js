@@ -310,3 +310,170 @@ $(document).ready(function () {
   // Initialize mobile menu
   initMobileMenu();
 });
+
+// SERVICE CIRCLES HOVER EFFECTS
+$(document).ready(function () {
+  let hoverTimeout;
+  let isHovering = false;
+  const $serviceCircles = $(".service-circle");
+  const $growthSystem = $(".growth-system");
+
+  // When hovering over a service circle
+  $serviceCircles.on("mouseenter", function () {
+    isHovering = true;
+    const $this = $(this);
+
+    // Clear any existing timeout
+    clearTimeout(hoverTimeout);
+
+    // Immediately hide other circles with a slight delay for smooth transition
+    hoverTimeout = setTimeout(() => {
+      $serviceCircles.not($this).css({
+        opacity: "0",
+        visibility: "hidden",
+        "pointer-events": "none",
+      });
+    }, 100);
+
+    // Ensure the hovered circle is fully visible
+    $this.css({
+      opacity: "1",
+      visibility: "visible",
+      "pointer-events": "auto",
+      "z-index": "10",
+    });
+
+    // Show the links for this circle
+    $this.find(".circle-links").css({
+      opacity: "1",
+      visibility: "visible",
+      "margin-top": "15px",
+    });
+
+    // Add active class
+    $this.addClass("hover-active");
+  });
+
+  // When leaving a service circle
+  $serviceCircles.on("mouseleave", function () {
+    const $this = $(this);
+    isHovering = false;
+
+    // Clear timeout
+    clearTimeout(hoverTimeout);
+
+    // Hide this circle's links
+    $this.find(".circle-links").css({
+      opacity: "0",
+      visibility: "hidden",
+      "margin-top": "20px",
+    });
+
+    // Show all circles again after a short delay
+    hoverTimeout = setTimeout(() => {
+      if (!isHovering) {
+        $serviceCircles.css({
+          opacity: "1",
+          visibility: "visible",
+          "pointer-events": "auto",
+          "z-index": "2",
+        });
+
+        // Remove active class from all
+        $serviceCircles.removeClass("hover-active");
+      }
+    }, 300);
+
+    // Remove active class from this circle
+    $this.removeClass("hover-active");
+  });
+
+  $growthSystem.on("mouseleave", function () {
+    isHovering = false;
+
+    // Clear any pending timeouts
+    clearTimeout(hoverTimeout);
+
+    // Immediately show all circles
+    $serviceCircles.css({
+      opacity: "1",
+      visibility: "visible",
+      "pointer-events": "auto",
+      "z-index": "2",
+    });
+
+    // Hide all links
+    $serviceCircles.find(".circle-links").css({
+      opacity: "0",
+      visibility: "hidden",
+      "margin-top": "20px",
+    });
+
+    // Remove active classes
+    $serviceCircles.removeClass("hover-active");
+  });
+
+  $(".grid-item").hover(
+    function () {
+      $(this).css("transition", "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)");
+    },
+    function () {
+      $(this).css("transition", "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)");
+    }
+  );
+});
+
+// ACTIVE MENU LINK HIGHLIGHTING
+$(document).ready(function () {
+  function setActiveMenuLinkSimple() {
+    // Get current page filename
+    const currentPage = window.location.pathname.split("/").pop();
+
+    // Remove any existing active classes
+    $(".menu-link").removeClass("active");
+
+    // Find and activate matching link
+    $(".menu-link a").each(function () {
+      const $link = $(this);
+      const linkHref = $link.attr("href");
+      const linkPage = linkHref.split("/").pop();
+
+      // For home page
+      if (linkHref === "/" || linkHref === "index.html") {
+        if (
+          currentPage === "" ||
+          currentPage === "index.html" ||
+          currentPage === "/"
+        ) {
+          $link.closest(".menu-link").addClass("active");
+          return false;
+        }
+      }
+
+      // For other pages
+      if (
+        linkPage === currentPage ||
+        (currentPage === "" && linkHref === "/") ||
+        (currentPage === "index.html" && linkHref === "/")
+      ) {
+        $link.closest(".menu-link").addClass("active");
+        return false; // Exit loop once found
+      }
+    });
+
+    // Fallback: if nothing found, activate home for index pages
+    if (
+      $(".menu-link.active").length === 0 &&
+      (currentPage === "" ||
+        currentPage === "index.html" ||
+        currentPage === "/")
+    ) {
+      $('.menu-link a[href="/"], .menu-link a[href="index.html"]')
+        .first()
+        .closest(".menu-link")
+        .addClass("active");
+    }
+  }
+
+  setActiveMenuLinkSimple();
+});

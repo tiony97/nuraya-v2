@@ -1,0 +1,216 @@
+// Growth System Section
+.growth-system-section {
+  .container {
+    height: 120vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.growth-system {
+  position: relative;
+  width: 50%;
+  height: 450px;
+  margin: 0 auto;
+
+  .main-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    border: 1px solid #dfb13c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+
+    .main-circle-content {
+      h3 {
+        background: linear-gradient(90deg, #bd892f 0%, #eac931 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-align: center;
+      }
+    }
+  }
+
+  .service-circle {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border: 1px dashed #dfb13c;
+    border-radius: 50%;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 2;
+
+    .circle-content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      text-align: center;
+
+      .circle-icon {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+        margin-bottom: 10px;
+      }
+
+      .circle-title {
+        font-size: 13px;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: #e5f3ed;
+      }
+
+      .circle-links {
+        position: absolute;
+        top: 100%;
+        left: 60%;
+        transform: translateX(-50%);
+        width: 200px;
+        background: transparent;
+        padding: 0;
+        margin-top: 20px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 3;
+        //box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+        a {
+          display: block;
+          color: #e5f3ed;
+          text-align: left;
+          text-decoration: none;
+          font-size: 13px;
+          margin-bottom: 5px;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: #cd9935;
+          }
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+    &:hover {
+      .circle-links {
+        opacity: 1;
+        visibility: visible;
+        margin-top: 15px;
+      }
+    }
+
+    &.hover-active {
+      box-shadow: 0 0 15px rgba(205, 153, 53, 0.3);
+    }
+  }
+
+  // Position circles at far ends
+  .service-circle[data-service="revenue"] {
+    top: 2%;
+    left: 3%;
+  }
+
+  .service-circle[data-service="trend-up"] {
+    top: 2%;
+    right: 3%;
+  }
+
+  .service-circle[data-service="cash-op"] {
+    bottom: 0;
+    left: 6%;
+  }
+
+  .service-circle[data-service="execution"] {
+    bottom: 0;
+    right: 6%;
+  }
+}
+
+// Grid Services Section
+.grid-services-section {
+  padding-bottom: 20vh;
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .services-grid {
+      width: 70%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+
+      .grid-item {
+        width: 100%;
+        height: fit-content;
+        background: transparent;
+        border: 1px solid #dfb13c;
+        transition: all 0.3s ease-in-out;
+
+        .title-section {
+          padding: 20px;
+          border-bottom: 1px solid #dfb13c;
+
+          .title-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            img {
+              width: 50px;
+              height: 50px;
+              object-fit: contain;
+            }
+            h4 {
+              font-size: 22px;
+              font-weight: 400;
+              text-transform: uppercase;
+              color: #e5f3ed;
+            }
+          }
+        }
+
+        .links-section {
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          a {
+            z-index: 10 !important;
+            color: #e5f3ed;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+            &:hover {
+              color: #cd9935;
+            }
+          }
+        }
+
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 30px rgba(223, 177, 60, 0.1);
+        }
+      }
+    }
+  }
+}

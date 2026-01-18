@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/css/locomotive-scroll.min.css" />
+    <link rel="stylesheet" href="./assets/css/tailwind.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/home_vector.png"
+      type="image/x-icon"
+    />
+    <title>Nuraya</title>
+  </head>
+  <body>
+    <!-- particles.js container -->
+    <div id="particles-js"></div>
+
+    <!--Custom Cursor pointer-->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <!--Staggered Bars Before Menu and Page Reveal-->
+    <div
+      class="stagger-bars fixed top-0 left-0 w-full h-screen grid grid-cols-7"
+    >
+      <div class="bar w-full h-full"></div>
+      <div class="bar w-full h-full"></div>
+      <div class="bar w-full h-full"></div>
+      <div class="bar w-full h-full"></div>
+      <div class="bar w-full h-full"></div>
+      <div class="bar w-full h-full"></div>
+      <div class="bar w-full h-full"></div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 20L12 4M12 4L5 11M12 4L19 11"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+
+    <!--Header-->
+    <header id="site-header" data-aos="fade-down" data-aos-duration="1000">
+      <div class="container">
+        <!--Logo-->
+        <a href="/" class="logo">
+          <img src="./assets/images/nuraya_logo.png" alt="nuraya_logo"
+        /></a>
+
+        <!--Menu Navigation-->
+        <div class="menu-links">
+          <nav>
+            <ul>
+              <li class="menu-link active"><a href="/">home</a></li>
+              <li class="menu-link"><a href="/services.html">service</a></li>
+              <li class="menu-link"><a href="/approach.html">approach</a></li>
+              <li class="menu-link">
+                <a href="/founders.html">the founders</a>
+              </li>
+              <li class="menu-link"><a href="/portfolio.html">portfolio</a></li>
+              <li class="menu-link">
+                <a href="/testimonial.html">testimonial</a>
+              </li>
+              <li class="menu-link">
+                <a href="/knowledge-hub.html">knowledge hub</a>
+              </li>
+              <li class="menu-link">
+                <a href="/contact.html">get in touch</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <!--Mobile Menu Button-->
+        <div id="mobile-menu-btn">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay" class="mobile-menu-overlay">
+      <div class="mobile-menu-container">
+        <!-- Close Button -->
+        <button id="mobile-menu-close" class="mobile-menu-close">
+          <svg
+            width="30"
+            height="30"
+            viewBox="0 0 30 30"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22.5 7.5L7.5 22.5"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M7.5 7.5L22.5 22.5"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+
+        <!-- Menu Links -->
+        <nav class="mobile-menu-nav">
+          <ul>
+            <li class="mobile-menu-link active"><a href="#">home</a></li>
+            <li class="mobile-menu-link"><a href="#">service</a></li>
+            <li class="mobile-menu-link"><a href="#">approach</a></li>
+            <li class="mobile-menu-link"><a href="#">the founders</a></li>
+            <li class="mobile-menu-link"><a href="#">portfolio</a></li>
+            <li class="mobile-menu-link"><a href="#">testimonial</a></li>
+            <li class="mobile-menu-link"><a href="#">knowledge hub</a></li>
+            <li class="mobile-menu-link"><a href="#">get in touch</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!--Page Content-->
+    <main class="page-content-2">
+      <!-- Background Image -->
+      <img
+        src="./assets/images/bg-image-lights.png"
+        class="bg-image"
+        alt="services background image"
+      />
+
+      <!-- Growth System Section -->
+      <section
+        class="growth-system-section"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-delay="200"
+      >
+        <div class="container">
+          <div class="growth-system">
+            <!-- Main center circle -->
+            <div class="main-circle">
+              <div class="main-circle-content">
+                <h3>NURAYA GROWTH SYSTEM</h3>
+              </div>
+            </div>
+
+            <!-- Individual service circles with hover content -->
+            <div class="service-circle" data-service="revenue">
+              <div class="circle-content">
+                <img
+                  src="./assets/images/money-send.png"
+                  alt="circle-icon"
+                  class="circle-icon"
+                />
+                <div class="circle-title">REVENUE GROWTH</div>
+                <div class="circle-links">
+                  <a href="./service.html">Growth Strategy</a>
+                  <a href="./service.html">Market Research</a>
+                  <a href="./service.html">Product Design & Testing</a>
+                  <a href="./service.html">Brand Identity Design</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-circle" data-service="trend-up">
+              <div class="circle-content">
+                <img
+                  src="./assets/images/trend-up.png"
+                  alt="circle-icon"
+                  class="circle-icon"
+                />
+                <div class="circle-title">PROFIT MAXINMIZATION</div>
+                <div class="circle-links">
+                  <a href="./service.html">Consumer Behavior Analysis</a>
+                  <a href="./service.html">Market Segmentation</a>
+                  <a href="./service.html">Customer Journey Mapping</a>
+                  <a href="./service.html">Retention Strategies</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-circle" data-service="cash-op">
+              <div class="circle-content">
+                <img
+                  src="./assets/images/money-3.png"
+                  alt="circle-icon"
+                  class="circle-icon"
+                />
+                <div class="circle-title">Cash Optimization</div>
+                <div class="circle-links">
+                  <a href="./service.html">Competitive Analysis</a>
+                  <a href="./service.html">Value-Based Pricing</a>
+                  <a href="./service.html">Dynamic Pricing Models</a>
+                  <a href="./service.html">Pricing Optimization</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-circle" data-service="execution">
+              <div class="circle-content">
+                <img
+                  src="./assets/images/award.png"
+                  alt="circle-icon"
+                  class="circle-icon"
+                />
+                <div class="circle-title">EXECUTIONAL EXCELLENCE</div>
+                <div class="circle-links">
+                  <a href="./service.html">Above The Line Campaigns</a>
+                  <a href="./service.html">Below The Line Campaigns</a>
+                  <a href="./service.html">Integrated Marketing</a>
+                  <a href="./service.html">ROI Measurement</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Grid Services Section -->
+      <section class="grid-services-section">
+        <div class="container">
+          <h2 class="main-title" data-aos="fade-up" data-aos-duration="500">
+            Services
+          </h2>
+
+          <div class="services-grid">
+            <!--Service Item-->
+            <div
+              class="grid-item"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="200"
+            >
+              <div class="title-section">
+                <div class="title-wrapper">
+                  <img
+                    src="./assets/images/money-send.png"
+                    alt="service_image"
+                    class="service-img"
+                  />
+                  <h4 class="title-text">Revenue Growth</h4>
+                </div>
+              </div>
+              <div class="links-section">
+                <a href="./service.html">Consumer Research</a>
+                <a href="./service.html">Marketing (ATL & BTL)</a>
+                <a href="./service.html">Growth Strategy</a>
+                <a href="./service.html">Market Research</a>
+                <a href="./service.html">Product Design & Testing</a>
+                <a href="./service.html">Brand Identity Design</a>
+                <a href="./service.html">Pricing Strategy</a>
+              </div>
+            </div>
+
+            <!--Service Item-->
+            <div
+              class="grid-item"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="200"
+            >
+              <div class="title-section">
+                <div class="title-wrapper">
+                  <img
+                    src="./assets/images/trend-up.png"
+                    alt="service_image"
+                    class="service-img"
+                  />
+                  <h4 class="title-text">Profit Maximization</h4>
+                </div>
+              </div>
+              <div class="links-section">
+                <a href="./service.html">Consumer Research</a>
+                <a href="./service.html">Marketing (ATL & BTL)</a>
+                <a href="./service.html">Growth Strategy</a>
+                <a href="./service.html">Market Research</a>
+                <a href="./service.html">Product Design & Testing</a>
+                <a href="./service.html">Brand Identity Design</a>
+                <a href="./service.html">Pricing Strategy</a>
+              </div>
+            </div>
+
+            <!--Service Item-->
+            <div
+              class="grid-item"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="200"
+            >
+              <div class="title-section">
+                <div class="title-wrapper">
+                  <img
+                    src="./assets/images/money-3.png"
+                    alt="service_image"
+                    class="service-img"
+                  />
+                  <h4 class="title-text">Cash Optimization</h4>
+                </div>
+              </div>
+              <div class="links-section">
+                <a href="./service.html">Consumer Research</a>
+                <a href="./service.html">Marketing (ATL & BTL)</a>
+                <a href="./service.html">Growth Strategy</a>
+                <a href="./service.html">Market Research</a>
+                <a href="./service.html">Product Design & Testing</a>
+                <a href="./service.html">Brand Identity Design</a>
+                <a href="./service.html">Pricing Strategy</a>
+              </div>
+            </div>
+
+            <!--Service Item-->
+            <div
+              class="grid-item"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="200"
+            >
+              <div class="title-section">
+                <div class="title-wrapper">
+                  <img
+                    src="./assets/images/award.png"
+                    alt="service_image"
+                    class="service-img"
+                  />
+                  <h4 class="title-text">Executional Excellence</h4>
+                </div>
+              </div>
+              <div class="links-section">
+                <a href="./service.html">Consumer Research</a>
+                <a href="./service.html">Marketing (ATL & BTL)</a>
+                <a href="./service.html">Growth Strategy</a>
+                <a href="./service.html">Market Research</a>
+                <a href="./service.html">Product Design & Testing</a>
+                <a href="./service.html">Brand Identity Design</a>
+                <a href="./service.html">Pricing Strategy</a>
+                <a href="./service.html">Pricing Strategy</a>
+                <a href="./service.html">Pricing Strategy</a>
+                <a href="./service.html">Pricing Strategy</a>
+                <a href="./service.html">Pricing Strategy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--JS-->
+    <!-- particles.js lib -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <script src="./assets/js/all.min.js"></script>
+    <script src="./assets/js/barba.js"></script>
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/js/gsap.min.js"></script>
+    <script src="./assets/js/ScrollToPlugin.min.js"></script>
+    <script src="./assets/js/ScrollTrigger.min.js"></script>
+    <script src="./assets/js/split-type.min.js"></script>
+    <script src="./assets/js/lenis.min.js"></script>
+    <script src="./assets/js/locomotive-scroll.min.js"></script>
+    <script src="./assets/js/split-type.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./assets/js/main.js"></script>
+
+    <script>
+      AOS.init({
+        duration: 1000,
+        easing: "ease-in-out",
+        once: false,
+        mirror: false,
+        offset: 100,
+      });
+    </script>
+  </body>
+</html>
