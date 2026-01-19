@@ -1,0 +1,188 @@
+.main-approach-section {
+  height: fit-content;
+
+  .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30vh;
+    padding-bottom: 10vh;
+
+    .breadcrumb {
+      color: #e5f3ed4d;
+    }
+    .main-title {
+      margin-top: 0.3em;
+      margin-bottom: 1em;
+    }
+    .description {
+      width: 50%;
+      font-size: 17px;
+      line-height: 32px;
+      text-align: center;
+    }
+    .approach-grid {
+      margin-top: 5em;
+      margin-bottom: 5em;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3em;
+      width: 80%;
+      .approach-item {
+        text-decoration: none;
+        width: 100%;
+        height: 300px;
+        background: transparent;
+        border: 3px solid #d0a32a;
+        padding: 2em;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease-in-out;
+        img {
+          width: 80px;
+          height: 80px;
+          object-fit: contain;
+          margin-bottom: 1.5em;
+        }
+        h5 {
+          position: relative;
+          display: block;
+          font-size: 14px;
+          line-height: 19px;
+          letter-spacing: normal;
+          text-transform: capitalize;
+          text-align: center;
+          font-weight: 400;
+          color: #ffffff;
+        }
+        &:hover {
+          box-shadow: 0 0 20px #d0a32a;
+          transform: translateY(-10px);
+        }
+      }
+    }
+  }
+}
+
+/* Approach Item Page Styles */
+.approach-item-content {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 30vh;
+  padding-bottom: 20vh;
+  .details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .breadcrumb {
+      color: #e5f3ed4d;
+    }
+    .main-title {
+      margin-top: 0.3em;
+      margin-bottom: 1em;
+    }
+    .description {
+      width: 50%;
+      font-size: 17px;
+      line-height: 32px;
+      text-align: center;
+    }
+  }
+
+  .summary {
+    margin-top: 4em;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3em;
+    margin-bottom: 6em;
+
+    .summary-list-wrapper {
+      display: block;
+      width: 43%;
+      height: fit-content;
+      .summary-item {
+        display: flex;
+        align-items: center;
+        gap: 1.5em;
+        margin-bottom: 1em;
+
+        .icon {
+          width: 60px;
+          height: 60px;
+          object-fit: contain;
+        }
+        .content {
+          min-height: 60px;
+          position: relative;
+          display: block;
+          padding-bottom: 0.8em;
+          h5 {
+            font-size: 16px;
+            line-height: 22px;
+            font-weight: 400;
+            color: #ffffff;
+            text-transform: capitalize;
+            letter-spacing: normal;
+            margin-bottom: 0.3em;
+          }
+          p {
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 300;
+            color: #ffffff;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(
+              90deg,
+              rgba(157, 123, 32, 0) -5.95%,
+              #d0a32a 44.44%,
+              rgba(106, 83, 21, 0) 108.41%
+            );
+          }
+        }
+        &:last-of-type {
+          margin: 0;
+        }
+      }
+    }
+    .summary-image-wrapper {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .summary-right {
+    margin-left: auto;
+  }
+  .summary-left {
+    margin-right: auto;
+    flex-direction: row-reverse;
+  }
+}

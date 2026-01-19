@@ -2,7 +2,7 @@
 :root {
   --background-color: #042d22;
   --foreground-color: #e5f3ed;
-  --primary-accent-color: #bd892f;
+  --primary-accent-color: #dfb13c;
   --secondary-accent-color: #eac931;
 }
 
@@ -71,8 +71,8 @@ h1 {
   font-size: 58px;
   font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 40px;
-  line-height: 60px;
+  letter-spacing: 20px;
+  line-height: 67px;
   color: var(--primary-accent-color);
 }
 h2 {
@@ -160,7 +160,8 @@ main {
   );
 }
 
-.main-title {
+.main-title,
+.secondary-title {
   background: linear-gradient(90deg, #bd892f 0%, #eac931 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -214,14 +215,12 @@ main {
   padding: 0.8em 1.2em;
   position: relative;
 
-  p {
-    text-wrap: nowrap;
-    font-size: 12px;
-    letter-spacing: 3px;
-    font-weight: 400;
-    text-transform: uppercase;
-    color: #ffffff;
-  }
+  text-wrap: nowrap;
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #ffffff;
 
   &::after {
     content: "";
@@ -368,7 +367,9 @@ header {
   z-index: 9999;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
   pointer-events: none;
 
   &.active {
@@ -708,3 +709,4 @@ header {
 //Imports
 @import "./case-study";
 @import "./services";
+@import "./approach";
