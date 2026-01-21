@@ -1,0 +1,111 @@
+.testimonial-content {
+  padding: 25vh 0;
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .title-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 5;
+      width: 50vw;
+      position: relative;
+      margin-bottom: 5em;
+      h2 {
+        margin-top: 28px;
+      }
+    }
+
+    .testimonials-swiper {
+      width: 80%;
+      display: flex;
+      position: relative;
+      margin-bottom: 30vh;
+
+      .swiper-slide {
+        height: auto;
+        min-height: 460px;
+        width: 100%;
+        background: transparent;
+        .testimonial {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 2em;
+          .content-wrapper {
+            width: 50%;
+            height: fit-content;
+            display: flex;
+            align-items: flex-start;
+            gap: 2em;
+            .quote {
+              width: 80px;
+              height: 80px;
+              object-fit: contain;
+            }
+            .content {
+              display: block;
+              p {
+                font-size: 15px;
+                line-height: 28px;
+                font-weight: 300;
+                color: #e5f3ed;
+                margin-bottom: 2em;
+              }
+              h5 {
+                font-size: 15px;
+                line-height: 28px;
+                font-weight: 500;
+                text-transform: capitalize;
+                letter-spacing: normal;
+                color: #e5f3ed;
+              }
+            }
+          }
+          .image-wrapper {
+            position: relative;
+            width: 36%;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .main-image {
+              position: absolute;
+              top: 0;
+              right: 0;
+              width: 90%;
+              height: 93%;
+              object-fit: cover;
+              z-index: 2;
+            }
+            .vector-image {
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 60%;
+              height: 80%;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+    }
+
+    .swiper-pagination {
+      //bottom: 4em;
+
+      .swiper-pagination-bullet {
+        width: 13px;
+        height: 13px;
+        background: #f0c33c4d;
+        opacity: 1;
+
+        &-active {
+          background: #d2b43d;
+        }
+      }
+    }
+  }
+}

@@ -264,6 +264,78 @@ function initMobileMenu() {
   });
 }
 
+/* TESTIMONIALS SLIDER */
+$(document).ready(function () {
+  // Initialize Testimonials Swiper
+  const initTestimonialsSwiper = () => {
+    const testimonialsSwiper = new Swiper(".testimonials-swiper", {
+      direction: "horizontal",
+      loop: true,
+      speed: 600,
+      grabCursor: true,
+      spaceBetween: 30,
+      centeredSlides: true,
+
+      // Responsive breakpoints
+      breakpoints: {
+        // when window width is >= 320px
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        // when window width is >= 768px
+        768: {
+          slidesPerView: 1,
+          spaceBetween: 30,
+        },
+        // when window width is >= 1024px
+        1024: {
+          slidesPerView: 1,
+          spaceBetween: 30,
+        },
+      },
+
+      // Auto play
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+
+      // Pagination
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        //dynamicBullets: true,
+      },
+    });
+
+    // Pause on hover
+    $(".testimonials-swiper").hover(
+      function () {
+        testimonialsSwiper.autoplay.stop();
+      },
+      function () {
+        testimonialsSwiper.autoplay.start();
+      },
+    );
+
+    return testimonialsSwiper;
+  };
+
+  // Initialize swiper
+  const testimonialsSwiper = initTestimonialsSwiper();
+
+  // Reinitialize on window resize for better responsiveness
+  let resizeTimer;
+  $(window).on("resize", function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      testimonialsSwiper.update();
+    }, 250);
+  });
+});
+
 /* INITIALIZE FUNCTIONS (WITH CUSTOM CURSOR) */
 $(document).ready(function () {
   // Initialize cursor
@@ -283,13 +355,13 @@ $(document).ready(function () {
           left: `${posX}px`,
           top: `${posY}px`,
         },
-        { duration: 300, fill: "forwards" }
+        { duration: 300, fill: "forwards" },
       );
     });
 
     // Add hover effects
     const interactiveElements = document.querySelectorAll(
-      "a, button, .menu-trigger-button"
+      "a, button, .menu-trigger-button",
     );
     interactiveElements.forEach((element) => {
       element.addEventListener("mouseenter", function () {
@@ -419,7 +491,7 @@ $(document).ready(function () {
     },
     function () {
       $(this).css("transition", "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)");
-    }
+    },
   );
 });
 
@@ -476,4 +548,189 @@ $(document).ready(function () {
   }
 
   setActiveMenuLinkSimple();
+});
+
+// FOUNDER PAGE SLIDER
+$(document).ready(function () {
+  // Founder Slider Functionality
+  function initFounderSlider() {
+    const $sliderWrapper = $(".slider-wrapper");
+    const $introSlide = $(".intro-slide");
+    const $detailsSlide = $(".details-slide");
+    const $prevBtn = $(".slider-buttons .prev");
+    const $nextBtn = $(".slider-buttons .next");
+
+    let currentSlide = 0;
+    const totalSlides = 2;
+    const slideDuration = 0.8;
+
+    // Initialize slider
+    function initSlider() {
+      // Set initial states
+      $introSlide.addClass("active");
+      $detailsSlide.removeClass("active");
+
+      // Update button states
+      updateButtonStates();
+
+      // Add click handlers
+      $nextBtn.on("click", nextSlide);
+      $prevBtn.on("click", prevSlide);
+
+      // Add keyboard navigation
+      $(document).on("keydown", handleKeyboardNavigation);
+    }
+
+    // Handle slide transitions
+    function goToSlide(slideIndex) {
+      // Validate slide index
+      if (slideIndex < 0 || slideIndex >= totalSlides) return;
+
+      // Get current and next slide elements
+      const $currentSlide = currentSlide === 0 ? $introSlide : $detailsSlide;
+      const $nextSlide = slideIndex === 0 ? $introSlide : $detailsSlide;
+
+      // Animate out current slide
+      gsap.to($currentSlide, {
+        duration: slideDuration / 2,
+        opacity: 0,
+        ease: "power2.out",
+        onComplete: function () {
+          // Remove active class from current slide
+          $currentSlide.removeClass("active");
+
+          // Animate in next slide
+          gsap.fromTo(
+            $nextSlide,
+            {
+              opacity: 0,
+              visibility: "visible",
+              pointerEvents: "all",
+            },
+            {
+              duration: slideDuration / 2,
+              opacity: 1,
+              ease: "power2.in",
+              onStart: function () {
+                // Add active class to next slide
+                $nextSlide.addClass("active");
+              },
+              onComplete: function () {
+                // Update current slide
+                currentSlide = slideIndex;
+                updateButtonStates();
+              },
+            },
+          );
+        },
+      });
+    }
+
+    // Next slide function
+    function nextSlide() {
+      if (currentSlide < totalSlides - 1) {
+        goToSlide(currentSlide + 1);
+      }
+    }
+
+    // Previous slide function
+    function prevSlide() {
+      if (currentSlide > 0) {
+        goToSlide(currentSlide - 1);
+      }
+    }
+
+    // Update button states (disabled/enabled)
+    function updateButtonStates() {
+      // Always show both buttons
+      $prevBtn.css({
+        opacity: 1,
+        visibility: "visible",
+      });
+      $nextBtn.css({
+        opacity: 1,
+        visibility: "visible",
+      });
+
+      // Enable/disable based on slide position
+      if (currentSlide === 0) {
+        // First slide - disable prev button
+        $prevBtn.prop("disabled", true);
+        $nextBtn.prop("disabled", false);
+      } else if (currentSlide === totalSlides - 1) {
+        // Last slide - disable next button
+        $prevBtn.prop("disabled", false);
+        $nextBtn.prop("disabled", true);
+      } else {
+        // Middle slide (if more slides added) - enable both
+        $prevBtn.prop("disabled", false);
+        $nextBtn.prop("disabled", false);
+      }
+    }
+
+    // Keyboard navigation
+    function handleKeyboardNavigation(e) {
+      if (e.key === "ArrowRight" || e.key === "Right") {
+        nextSlide();
+      } else if (e.key === "ArrowLeft" || e.key === "Left") {
+        prevSlide();
+      }
+    }
+
+    // Initialize slider on page load
+    function onPageLoad() {
+      // Set initial opacity for slides
+      gsap.set($introSlide, { opacity: 1 });
+      gsap.set($detailsSlide, { opacity: 0, visibility: "hidden" });
+
+      // Initialize the slider
+      initSlider();
+
+      // Animate in the first slide (if you want entrance animation)
+      gsap.fromTo(
+        $introSlide,
+        { y: 30 },
+        {
+          duration: slideDuration,
+          y: 0,
+          ease: "power2.out",
+        },
+      );
+
+      // Animate in buttons with delay
+      gsap.fromTo(
+        $sliderWrapper.next(".slider-buttons"),
+        { opacity: 0, y: 20 },
+        {
+          duration: slideDuration,
+          opacity: 1,
+          y: 0,
+          delay: slideDuration * 0.3,
+          ease: "power2.out",
+        },
+      );
+    }
+
+    // Start everything
+    onPageLoad();
+
+    // Cleanup function
+    return function cleanup() {
+      $nextBtn.off("click", nextSlide);
+      $prevBtn.off("click", prevSlide);
+      $(document).off("keydown", handleKeyboardNavigation);
+    };
+  }
+
+  // Initialize founder slider if on founders page
+  if ($(".founder-slider").length) {
+    const cleanupFounderSlider = initFounderSlider();
+
+    // Optional: Cleanup on page transition if using Barba.js
+    if (typeof barba !== "undefined") {
+      barba.hooks.beforeLeave(() => {
+        cleanupFounderSlider && cleanupFounderSlider();
+      });
+    }
+  }
 });

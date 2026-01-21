@@ -1,0 +1,175 @@
+.contact-content {
+  padding: 25vh 0;
+  .container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .contact-cta {
+      width: 85%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .title-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 5;
+        width: 50vw;
+        position: relative;
+        margin-bottom: 5em;
+        h2 {
+          margin-top: 28px;
+        }
+      }
+
+      .cta-form {
+        display: block;
+        width: 60%;
+        .form-item {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 2em;
+          label {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 28px;
+            color: #e5f3ed;
+          }
+          input {
+            border: none;
+            outline: none;
+            background: transparent;
+            font-size: 16px;
+            padding-bottom: 0.7em;
+            border-bottom: 1px solid #e5f3ed;
+
+            &::placeholder {
+              font-size: 16px;
+              font-weight: 400;
+              color: #e5f3ed4d;
+            }
+          }
+        }
+
+        button {
+          width: 130px;
+          height: 40px;
+          margin-top: 3em;
+          p {
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+          }
+          img {
+            margin-top: 10px;
+            width: 100%;
+            height: auto;
+            object-fit: fill;
+          }
+        }
+      }
+    }
+
+    .info {
+      width: 100%;
+      padding-top: 20vh;
+      padding-bottom: 20vh;
+      display: flex;
+      justify-content: center;
+      .info-card {
+        width: 60%;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid;
+        border-image: linear-gradient(
+            90deg,
+            rgba(157, 123, 32, 0.33) -9.35%,
+            #d0a32a 96.64%,
+            rgba(106, 83, 21, 0) 108.41%
+          )
+          1;
+        font-size: 13px;
+        font-weight: 400;
+        color: #ffffff;
+      }
+    }
+
+    .contact-newsletter {
+      .title-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        h5,
+        h2 {
+          text-align: center;
+        }
+      }
+
+      .newsletter-form {
+        display: block;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .form-item {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 4em;
+          label {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 28px;
+            color: #e5f3ed;
+          }
+          input {
+            border: none;
+            outline: none;
+            background: transparent;
+            font-size: 16px;
+            padding-bottom: 0.7em;
+            border-bottom: 1px solid #e5f3ed;
+
+            &::placeholder {
+              font-size: 16px;
+              font-weight: 400;
+              color: #e5f3ed4d;
+            }
+          }
+        }
+
+        .submit-btn {
+          width: 80%;
+          height: 50px;
+          padding: 1em 2em;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: transparent;
+          border: 1px solid transparent;
+          border-image: linear-gradient(
+              90deg,
+              rgba(157, 123, 32, 0.33) -9.35%,
+              #d0a32a 96.64%,
+              rgba(106, 83, 21, 0) 108.41%
+            )
+            1;
+
+          font-size: 12px;
+          font-weight: 400;
+          color: #ffffff;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}

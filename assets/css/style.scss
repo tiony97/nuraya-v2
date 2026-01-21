@@ -215,12 +215,14 @@ main {
   padding: 0.8em 1.2em;
   position: relative;
 
-  text-wrap: nowrap;
-  font-size: 12px;
-  letter-spacing: 3px;
-  font-weight: 400;
-  text-transform: uppercase;
-  color: #ffffff;
+  p {
+    text-wrap: nowrap;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
 
   &::after {
     content: "";
@@ -631,6 +633,59 @@ header {
   }
 }
 
+.page-content-3 {
+  position: relative;
+  height: 100vh;
+  max-height: 100vh;
+  width: 100%;
+  max-width: 100vw;
+  background: transparent;
+  .bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    object-fit: fill;
+    z-index: 0;
+  }
+}
+
+.page-content-4 {
+  position: relative;
+  height: 100vh;
+  max-height: 100vh;
+  width: 100%;
+  max-width: 100vw;
+  background: transparent;
+  .bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 120%;
+    object-fit: fill;
+    z-index: 0;
+  }
+}
+
+.page-content-5 {
+  position: relative;
+  height: 100vh;
+  max-height: 100vh;
+  width: 100%;
+  max-width: 100vw;
+  background: transparent;
+  .bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    object-fit: fill;
+    z-index: 0;
+  }
+}
 /* Responsive layout for tablet devices */
 @media (max-width: 1024px) {
   #mobile-menu-btn {
@@ -710,3 +765,6 @@ header {
 @import "./case-study";
 @import "./services";
 @import "./approach";
+@import "./contact";
+@import "./testimonial";
+@import "./founders";
