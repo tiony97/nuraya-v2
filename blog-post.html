@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/css/locomotive-scroll.min.css" />
+    <link rel="stylesheet" href="./assets/css/tailwind.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/home_vector.png"
+      type="image/x-icon"
+    />
+    <title>Nuraya</title>
+  </head>
+  <body>
+    <!-- particles.js container -->
+    <div id="particles-js"></div>
+
+    <!--Custom Cursor pointer-->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <!--Staggered Bars Before Menu and Page Reveal-->
+    <div
+      class="stagger-bars fixed top-0 left-0 w-full h-screen grid grid-cols-7"
+    >
+      <div class="bar w-full h-full"></div>
+      <div class="bar w-full h-full"></div>
+      <div class="bar w-full h-full"></div>
+      <div class="bar w-full h-full"></div>
+      <div class="bar w-full h-full"></div>
+      <div class="bar w-full h-full"></div>
+      <div class="bar w-full h-full"></div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 20L12 4M12 4L5 11M12 4L19 11"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+
+    <!--Header-->
+    <header id="site-header" data-aos="fade-down" data-aos-duration="1000">
+      <div class="container">
+        <!--Logo-->
+        <a href="/" class="logo">
+          <img src="./assets/images/nuraya_logo.png" alt="nuraya_logo"
+        /></a>
+
+        <!--Menu Navigation-->
+        <div class="menu-links">
+          <nav>
+            <ul>
+              <li class="menu-link active"><a href="/">home</a></li>
+              <li class="menu-link"><a href="/services.html">service</a></li>
+              <li class="menu-link"><a href="/approach.html">approach</a></li>
+              <li class="menu-link">
+                <a href="/founders.html">the founders</a>
+              </li>
+              <li class="menu-link"><a href="/portfolio.html">portfolio</a></li>
+              <li class="menu-link">
+                <a href="/testimonial.html">testimonial</a>
+              </li>
+              <li class="menu-link">
+                <a href="/blogs.html">knowledge hub</a>
+              </li>
+              <li class="menu-link">
+                <a href="/contact.html">get in touch</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <!--Mobile Menu Button-->
+        <div id="mobile-menu-btn">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay" class="mobile-menu-overlay">
+      <div class="mobile-menu-container">
+        <!-- Close Button -->
+        <button id="mobile-menu-close" class="mobile-menu-close">
+          <svg
+            width="30"
+            height="30"
+            viewBox="0 0 30 30"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22.5 7.5L7.5 22.5"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M7.5 7.5L22.5 22.5"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+
+        <!-- Menu Links -->
+        <nav class="mobile-menu-nav">
+          <ul>
+            <li class="mobile-menu-link active"><a href="#">home</a></li>
+            <li class="mobile-menu-link"><a href="#">service</a></li>
+            <li class="mobile-menu-link"><a href="#">approach</a></li>
+            <li class="mobile-menu-link"><a href="#">the founders</a></li>
+            <li class="mobile-menu-link"><a href="#">portfolio</a></li>
+            <li class="mobile-menu-link"><a href="#">testimonial</a></li>
+            <li class="mobile-menu-link"><a href="#">knowledge hub</a></li>
+            <li class="mobile-menu-link"><a href="#">get in touch</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!--Page Content-->
+    <main class="page-content-4">
+      <!-- Background Image -->
+      <img
+        src="./assets/images/bg-vector 4.png"
+        class="bg-image"
+        alt="founders background image"
+      />
+
+      <!-- Blog Post Content -->
+      <section class="blog-post-content">
+        <div class="container">
+          <!--Main Title Section-->
+          <div class="title-section">
+            <h5 class="breadcrumb" data-aos="fade-up" data-aos-duration="1000">
+              Insight that cuts through the noise.
+            </h5>
+            <h2 class="main-title" data-aos="fade-up" data-aos-duration="1000">
+              knowledge hub
+            </h2>
+          </div>
+
+          <!--Blog post image-->
+          <div class="blog-post-image">
+            <img
+              src="./assets/images/main-blog-post-image.jpg"
+              alt="blog post image"
+              class="post-image"
+            />
+            <div class="tags">
+              <span class="tag">advertising</span>
+              <span class="tag">marketing </span>
+            </div>
+          </div>
+
+          <!--Blog post content-->
+          <div class="blog-post-content">
+            <div class="meta">
+              <p class="date">September 4, 2022</p>
+              <span class="separator"></span>
+              <p class="author">Author of the Story</p>
+            </div>
+
+            <h4 class="title">Digital communication in people’s daily lines</h4>
+
+            <p class="content">
+              In today’s hyper-connected world, digital communication has become
+              an essential part of daily life. From instant messaging and social
+              media updates to work emails and video calls, people rely on
+              digital channels to stay informed, connected, and productive. What
+              once required physical presence or long delays—like mailing
+              letters or waiting for scheduled meetings—can now be achieved
+              instantly with a simple tap on a screen. This shift has redefined
+              the speed and accessibility of human interaction.
+            </p>
+            <p class="content">
+              Digital communication has also transformed how people maintain
+              relationships and build communities. Families and friends
+              separated by distance can now share moments through photos, voice
+              notes, or live video. Online groups, virtual events, and digital
+              platforms have made it easier for individuals to find people with
+              similar interests, collaborate on shared goals, and participate in
+              global conversations. These tools have not only enriched social
+              connection but also empowered communities to mobilize, support one
+              another, and share knowledge more easily than ever before.
+            </p>
+            <p class="content">
+              Professionally, digital communication has reshaped how work gets
+              done. Remote working tools have accelerated collaboration,
+              allowing teams across the world to brainstorm, plan, and execute
+              projects without being in the same room. Businesses now depend on
+              digital platforms for customer engagement, marketing, data
+              collection, and brand storytelling. While digital communication
+              brings speed and convenience, it also requires
+              intentionality—balancing screen time with real-life interaction
+              and ensuring clarity despite the lack of physical cues. As
+              technology continues to evolve, digital communication will remain
+              at the center of how people connect, learn, and thrive in modern
+            </p>
+          </div>
+
+          <!--Social Links-->
+          <div class="social-links">
+            <a href="#" class="link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="link"><i class="fab fa-youtube"></i></a>
+          </div>
+
+          <!--Comments-->
+          <div class="user-comments">
+            <h6 class="title">Comments (3)</h6>
+
+            <div class="comments-wrapper">
+              <!--Comment Items-->
+              <div class="comments">
+                <!--Comment 1-->
+                <div class="comment">
+                  <div class="wrapper">
+                    <!--Avatar-->
+                    <div class="comment-avatar">
+                      <img
+                        src="./assets/images/user-img-1.jpg"
+                        alt="avatar image"
+                      />
+                    </div>
+
+                    <!--Content-->
+                    <div class="comment-content">
+                      <div class="comment-header">
+                        <div class="details">
+                          <p class="name">Linda Marlow</p>
+                          <div class="separator"></div>
+                          <span class="date">August 21. 2025 7:43 pm</span>
+                        </div>
+                        <button class="site-btn reply-btn">reply</button>
+                      </div>
+                      <p class="comment-content">
+                        Walleye poolfish sand goby butterfly ray stream catfish
+                        jewfish, Spanish mackerel yellow weaver sixgill.
+                        Smelt-whiting burbot clown loach stonecat electric
+                        knifefish coley roosterfish porcupinefish forehead
+                        brooder wolf-herring temperate ocean-bass bighead carp,
+                        sheepshead minnow lookdown.
+                      </p>
+                    </div>
+                  </div>
+
+                  <!--Replies-->
+                  <div class="replies">
+                    <div class="reply">
+                      <div class="wrapper">
+                        <!--Reply avatar-->
+                        <div class="reply-avatar">
+                          <img
+                            src="./assets/images/user-img-2.jpg"
+                            alt="avatar image"
+                          />
+                        </div>
+
+                        <!--Reply Content-->
+                        <div class="reply-content">
+                          <div class="reply-header">
+                            <div class="details">
+                              <p class="name">Alen Grey</p>
+                              <span class="date">August 22. 2022 11:22 am</span>
+                            </div>
+                            <button class="site-btn">reply</button>
+                          </div>
+                          <p class="reply-content">
+                            Antarctic cod buffalofish yellowhead jawfish,
+                            codlet, ribbonfish velvetfish temperate perch ghost
+                            knifefish sturgeon.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!--Comment 2-->
+                <div class="comment">
+                  <div class="wrapper">
+                    <!--Avatar-->
+                    <div class="comment-avatar">
+                      <img
+                        src="./assets/images/user-img-3.jpg"
+                        alt="avatar image"
+                      />
+                    </div>
+
+                    <!--Content-->
+                    <div class="comment-content">
+                      <div class="comment-header">
+                        <div class="details">
+                          <p class="name">User727_11</p>
+                          <div class="separator"></div>
+                          <span class="date">August 19. 2025 7:43 pm</span>
+                        </div>
+                        <button class="site-btn reply-btn">reply</button>
+                      </div>
+                      <p class="comment-content">
+                        Zebrafish convict cichlid hatchetfish spookfish
+                        tubeblenny, white shark torrent fish turkeyfish marine
+                        hatchetfish. Bottlenose Molly Miller dusky grouper
+                        hamlet tope loach catfish brook lamprey yellowfin
+                        cutthroat trout; bigmouth buffalo.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--Comment Form-->
+              <div class="comment-form">
+                <h6 class="form-title">Leave a Comment</h6>
+                <!--Name and Email-->
+                <div class="dual-col">
+                  <div class="form-item">
+                    <input type="text" placeholder="Full Names" />
+                  </div>
+                  <div class="form-item">
+                    <input type="email" placeholder="Email" />
+                  </div>
+                </div>
+
+                <!--Comment input-->
+                <div class="form-item">
+                  <textarea cols="4" placeholder="Comments"></textarea>
+                </div>
+
+                <!--Save Info Checkbox-->
+                <div class="check">
+                  <input type="checkbox" name="check" />
+                  <p>
+                    Save my name, email, and website in this browser for the
+                    next time I comment.
+                  </p>
+                </div>
+
+                <!--Submit btn-->
+                <button type="submit" class="site-btn submit-btn">
+                  post a comment
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!--Related Posts-->
+          <div class="related-posts">
+            <h6 class="title">Related Posts</h6>
+
+            <!--Slider-->
+            <div class="related-posts-slider swiper">
+              <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                  <div class="post-item">
+                    <div class="post-image">
+                      <img
+                        src="./assets/images/related-post-image-1.jpg"
+                        alt="Post Title 1"
+                      />
+                    </div>
+                    <div class="post-details">
+                      <div class="post-meta">
+                        <span class="post-date">Jan 15, 2024</span>
+                        <span class="post-author">By John Doe</span>
+                      </div>
+                      <h3 class="post-title">
+                        <a href="#"
+                          >How to Build a Successful Startup in 2024</a
+                        >
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                  <div class="post-item">
+                    <div class="post-image">
+                      <img
+                        src="./assets/images/related-post-image-3.jpg"
+                        alt="Post Title 2"
+                      />
+                    </div>
+                    <div class="post-details">
+                      <div class="post-meta">
+                        <span class="post-date">Feb 20, 2024</span>
+                        <span class="post-author">By Jane Smith</span>
+                      </div>
+                      <h3 class="post-title">
+                        <a href="#">The Future of Web Development Trends</a>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                  <div class="post-item">
+                    <div class="post-image">
+                      <img
+                        src="./assets/images/related-post-image-2.jpg"
+                        alt="Post Title 3"
+                      />
+                    </div>
+                    <div class="post-details">
+                      <div class="post-meta">
+                        <span class="post-date">Mar 10, 2024</span>
+                        <span class="post-author">By Mike Johnson</span>
+                      </div>
+                      <h3 class="post-title">
+                        <a href="#">Digital Marketing Strategies for 2024</a>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Add more slides -->
+                <div class="swiper-slide">
+                  <div class="post-item">
+                    <div class="post-image">
+                      <img
+                        src="./assets/images/related-post-image-1.jpg"
+                        alt="Post Title 4"
+                      />
+                    </div>
+                    <div class="post-details">
+                      <div class="post-meta">
+                        <span class="post-date">Apr 5, 2024</span>
+                        <span class="post-author">By Sarah Wilson</span>
+                      </div>
+                      <h3 class="post-title">
+                        <a href="#">AI Tools Every Developer Should Know</a>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="post-item">
+                    <div class="post-image">
+                      <img
+                        src="./assets/images/related-post-image-3.jpg"
+                        alt="Post Title 5"
+                      />
+                    </div>
+                    <div class="post-details">
+                      <div class="post-meta">
+                        <span class="post-date">May 12, 2024</span>
+                        <span class="post-author">By David Brown</span>
+                      </div>
+                      <h3 class="post-title">
+                        <a href="#">Building Responsive Websites in 2024</a>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Navigation buttons -->
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--JS-->
+    <!-- particles.js lib -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <script src="./assets/js/all.min.js"></script>
+    <script src="./assets/js/barba.js"></script>
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/js/gsap.min.js"></script>
+    <script src="./assets/js/ScrollToPlugin.min.js"></script>
+    <script src="./assets/js/ScrollTrigger.min.js"></script>
+    <script src="./assets/js/split-type.min.js"></script>
+    <script src="./assets/js/lenis.min.js"></script>
+    <script src="./assets/js/locomotive-scroll.min.js"></script>
+    <script src="./assets/js/split-type.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./assets/js/swiper-bundle.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+
+    <script>
+      AOS.init({
+        duration: 1000,
+        easing: "ease-in-out",
+        once: false,
+        mirror: false,
+        offset: 100,
+      });
+    </script>
+  </body>
+</html>

@@ -212,15 +212,21 @@ main {
 .site-btn {
   width: fit-content;
   height: fit-content;
-  padding: 0.8em 1.2em;
+  padding: 0.5em 1em;
   position: relative;
+  text-wrap: nowrap;
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: 400;
+  text-transform: uppercase !important;
+  color: #ffffff;
 
   p {
     text-wrap: nowrap;
     font-size: 12px;
     letter-spacing: 3px;
     font-weight: 400;
-    text-transform: uppercase;
+    text-transform: uppercase !important;
     color: #ffffff;
   }
 
@@ -768,3 +774,4 @@ header {
 @import "./contact";
 @import "./testimonial";
 @import "./founders";
+@import "./blogs";

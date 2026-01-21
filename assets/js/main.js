@@ -734,3 +734,72 @@ $(document).ready(function () {
     }
   }
 });
+
+// Related Posts Slider
+$(document).ready(function () {
+  function initRelatedPostsSlider() {
+    if ($(".related-posts-slider").length) {
+      // Initialize Swiper
+      const relatedPostsSwiper = new Swiper(".related-posts-slider", {
+        direction: "horizontal",
+        loop: false,
+        speed: 500,
+        grabCursor: true,
+        slidesPerView: 1,
+        spaceBetween: 20,
+
+        // Navigation arrows
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+
+        // Breakpoints for responsive design
+        breakpoints: {
+          // When window width is >= 576px
+          576: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          // When window width is >= 768px
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 25,
+          },
+          // When window width is >= 992px (desktop)
+          992: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          // When window width is >= 1200px
+          1200: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+        },
+
+        // Keyboard control
+        keyboard: {
+          enabled: true,
+          onlyInViewport: true,
+        },
+      });
+
+      return relatedPostsSwiper;
+    }
+  }
+
+  // Initialize the slider
+  const relatedPostsSlider = initRelatedPostsSlider();
+
+  // Reinitialize on window resize for better responsiveness
+  let resizeTimer;
+  $(window).on("resize", function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      if (relatedPostsSlider && !relatedPostsSlider.destroyed) {
+        relatedPostsSlider.update();
+      }
+    }, 250);
+  });
+});
