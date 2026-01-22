@@ -931,3 +931,110 @@ $(document).ready(function () {
   // Initialize slider
   initCaseStudySlider();
 });
+
+//Case study page slider
+$(document).ready(function () {
+  function initCaseStudyPageSlider() {
+    console.log("Initializing case study slider");
+
+    let currentSlide = 1;
+    const slides = $(".slide");
+    const totalSlides = slides.length;
+    let isAnimating = false;
+    let autoSlideInterval;
+
+    // Update UI functions
+    function updateUI() {
+      $(".slider-number").text(`${currentSlide} / ${totalSlides}`);
+      const progress = ((currentSlide - 1) / (totalSlides - 1)) * 100;
+      $(".slider-progress-bar").css("width", `${progress}%`);
+
+      // Update button states
+      $("#prev-slide").prop("disabled", currentSlide === 1);
+      $("#next-slide").prop("disabled", currentSlide === totalSlides);
+    }
+
+    // Slide navigation
+    function goToSlide(slideNumber) {
+      if (isAnimating || slideNumber < 1 || slideNumber > totalSlides) return;
+
+      isAnimating = true;
+      const direction = slideNumber > currentSlide ? 1 : -1;
+
+      // Hide current active slide
+      gsap.to($(".slide.active"), {
+        opacity: 0,
+        x: -100 * direction,
+        duration: 0.6,
+        ease: "power2.inOut",
+        onComplete: function () {
+          $(".slide").removeClass("active");
+
+          // Show new slide
+          const newSlide = $(`.slide[data-slide="${slideNumber}"]`);
+          newSlide.addClass("active");
+          currentSlide = slideNumber;
+
+          gsap.fromTo(
+            newSlide,
+            {
+              opacity: 0,
+              x: 100 * direction,
+            },
+            {
+              opacity: 1,
+              x: 0,
+              duration: 0.7,
+              ease: "power2.out",
+              onComplete: function () {
+                isAnimating = false;
+                updateUI();
+              },
+            },
+          );
+        },
+      });
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides && !isAnimating) {
+        goToSlide(currentSlide + 1);
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 1 && !isAnimating) {
+        goToSlide(currentSlide - 1);
+      }
+    }
+
+    // Initialize slider
+    function initSlider() {
+      updateUI();
+
+      // Add event listeners
+      $("#next-slide").on("click", nextSlide);
+      $("#prev-slide").on("click", prevSlide);
+
+      // Keyboard navigation
+      $(document).on("keydown", function (e) {
+        if (e.key === "ArrowRight") {
+          nextSlide();
+        } else if (e.key === "ArrowLeft") {
+          prevSlide();
+        }
+      });
+    }
+
+    // Initialize the slider
+    initSlider();
+  }
+
+  // Make sure Font Awesome is loaded before initializing
+  if (typeof FontAwesome !== "undefined") {
+    initCaseStudyPageSlider();
+  } else {
+    // Wait for Font Awesome to load
+    $(window).on("load", initCaseStudyPageSlider);
+  }
+});
