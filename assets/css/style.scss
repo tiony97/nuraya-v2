@@ -359,6 +359,21 @@ header {
               bottom: -5px;
             }
           }
+          .search {
+            button {
+              outline: none;
+              border: none;
+              background: transparent;
+              font-size: 15px;
+              margin-top: 7px;
+              &:hover {
+                color: var(--primary-accent-color) !important;
+                &::after {
+                  opacity: 0 !important;
+                }
+              }
+            }
+          }
         }
       }
     }

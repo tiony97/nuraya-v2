@@ -343,6 +343,19 @@ header .container .menu-links nav ul li.active::after {
   opacity: 1;
   bottom: -5px;
 }
+header .container .menu-links nav ul .search button {
+  outline: none;
+  border: none;
+  background: transparent;
+  font-size: 15px;
+  margin-top: 7px;
+}
+header .container .menu-links nav ul .search button:hover {
+  color: var(--primary-accent-color) !important;
+}
+header .container .menu-links nav ul .search button:hover::after {
+  opacity: 0 !important;
+}
 
 #mobile-menu-overlay {
   position: fixed;
